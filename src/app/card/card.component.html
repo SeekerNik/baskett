@@ -1,0 +1,31 @@
+<div class="card">
+  <img src="assets/img/grocery.jpg" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <div class="title-box">
+      <div class="title">{{ grocery.p_name }}</div>
+      <div class="price">Rs {{ grocery.p_cost }}</div>
+    </div>
+    <p class="card-text">
+      {{ grocery.p_details }}
+    </p>
+
+    <p *ngIf="grocery.p_category; else el">{{ grocery.p_category }}</p>
+    <p><ng-template #el>Category don't exist</ng-template></p>
+
+    <div
+      *ngIf="grocery.p_availability; else quantity"
+      class="quantity-section my-1"
+      #quantity
+    >
+      <label for="quantity" class="mx-2">Qty:</label>
+      <input
+        class="form-control w-50"
+        type="number"
+        name="quantity"
+        id="quantity"
+      />
+      <button class="btn btn-success mx-2">Add</button>
+    </div>
+    <ng-template #quantity>Out of Stock</ng-template>
+  </div>
+</div>

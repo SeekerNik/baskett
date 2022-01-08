@@ -1,0 +1,14 @@
+.heading {
+  margin: 20px auto 0px;
+  text-align: center;
+  font-size: 2rem;
+}
+/* 
+.grocery-cards {
+  text-align: center;
+} */
+
+.search-section{
+  display: flex;
+}
+
